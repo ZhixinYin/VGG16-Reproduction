@@ -2,7 +2,7 @@
 # VGG Paper Reproduction (2015)
 
 ## Introduction
-This project reproduces the original VGG16 architecture as described in the paper, which will later be used as parameter initilisation for other VGG networks.
+This project reproduces the original VGG16 architecture as described in the paper, which uses weights from VGG11 as weights initialisation.
 
 ## Architecture Summary
 | Stage          | Layer   | Type             | Filters / Units | Kernel / Stride | Output Size     |
