@@ -47,8 +47,11 @@ tiny-imagenet-200 is used as the dataset in this reproduction. Validation set is
 
 ![](image/TrainingAccuracy.png)
 
+## Discussion
 The difference between training accuracy and
 test accuracy is expected, as the training examples are few compared to the number of parameters in VGG16, which helps CNN memorise the training data set, instead of finding the patterns. For reducing overfitting in the future, some preprocessing techniques like PCA, crop, horizontal flipping and so on should be utilised.
+
+We also found that BN sigificantly reduces the training difficulties, although the original paper didn't use it. Especially for deep CNN like VGG16 that suffers from vanishing gradients or expolding gradients, a small mistake made in weight initialisation will make training harder. Moreover, without BN, one channel with large activations can dominate the update direction. At first, we didn't utilise BN for training and we found that the loss hardly decrease. After utilising BN, we found that the training is much easier.
 
 ## References
 Simonyan, K., & Zisserman, A. (2015). Very deep convolutional networks for large-scale image recognition. International Conference on Learning Representations (ICLR). https://arxiv.org/abs/1409.1556
